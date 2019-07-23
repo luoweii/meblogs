@@ -1,0 +1,15 @@
+{
+  "name": "meblogs",
+  "version": "1.0.0",
+  "description": "me blogs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luowei",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0"
+  }
+}
