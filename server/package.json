@@ -10,6 +10,16 @@
   "author": "luowei",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.7.0"
+    "compression": "^1.7.4",
+    "get-port": "^5.0.0",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-connect": "^2.0.1",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.2",
+    "mongoose": "^5.6.6",
+    "sha1": "^1.1.1",
+    "trek-captcha": "^0.4.0"
   }
 }
