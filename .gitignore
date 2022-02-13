@@ -22,5 +22,5 @@
 /.idea
 /logs
 /scripts/config.js
-/.github
+#/.github
 /docs/.vuepress/dist
