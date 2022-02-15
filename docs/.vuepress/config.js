@@ -1,5 +1,3 @@
-const moment = require('moment');
-
 module.exports = {
   // 路径名为 "/<REPO>/"
   base: '/meblogs/',
@@ -45,6 +43,12 @@ module.exports = {
     ]
   },
   plugins: [
+    (options, ctx) => {
+      return {
+        name: 'vuepress-plugin-code-try',
+        clientRootMixin: path.resolve(__dirname, 'vuepress-plugin-code-try/index.js')
+      }
+    },
     [
       '@vuepress/last-updated',
       {
@@ -56,5 +60,17 @@ module.exports = {
         }
       }
     ]
-  ]
+  ],
+  markdown: {
+    extendMarkdown: md => {
+      md.use(function (md) {
+        const fence = md.renderer.rules.fence
+        md.renderer.rules.fence = (...args) => {
+          let rawCode = fence(...args);
+          rawCode = rawCode.replace(/<span class="token comment">\/\/ try-link https:(\/\/.*)<\/span>\n/ig, '<a href="$1" class="try-button" target="_blank">Try</a>');
+          return `${rawCode}`
+        }
+      })
+    }
+  }
 }
